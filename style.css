@@ -14,7 +14,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: #fff;
-    /* Added overflow-x-hidden to prevent horizontal scroll from animations */
     overflow-x: hidden; 
 }
 
@@ -29,7 +28,6 @@ a {
     text-decoration: none;
 }
 
-/* Remove the default underline on hover for links */
 a:hover {
     text-decoration: none;
 }
@@ -85,18 +83,14 @@ header {
 
 /* ======== MAIN CONTENT ======== */
 main {
-    /* Add padding to the top to space out the first block */
     padding-top: 2.5rem;
 }
 
-/*********************************/
-/* REFACTORED CONTENT BLOCK STYLE */
-/*********************************/
 .content-block {
     background-color: var(--light-blue-bg);
     padding: 2.5rem;
     border-radius: 20px;
-    margin-bottom: 2.5rem; /* Standardized spacing */
+    margin-bottom: 2.5rem; 
 }
 
 /* Hero block styles */
@@ -148,7 +142,7 @@ main {
 }
 
 .waitlist-btn {
-    background-color: #fff; /* Changed to white */
+    background-color: #fff; 
     color: var(--primary-blue);
     font-weight: 700;
     text-align: center;
@@ -157,6 +151,7 @@ main {
     border: 1px solid var(--primary-blue);
     text-decoration: none;
     transition: all 0.2s ease;
+    display: inline-block; /* Added for better layout control */
 }
 
 .waitlist-btn:hover {
@@ -295,16 +290,24 @@ footer .copyright {
         font-size: 1.5rem;
         text-align: left;
     }
-    .waitlist-btn {
-        width: 90%;
-        padding: 1rem;
-    }
 
-    /* ======== THE RESPONSIVE TABLE FIX ======== */
+    /*********************************/
+    /* UPDATED WAITLIST BUTTON FIX */
+    /*********************************/
+    .waitlist-btn {
+        width: auto; /* Let padding control the width */
+        padding: 1rem 1.5rem; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+    /*********************************/
+
+    /*********************************/
+    /* UPDATED RESPONSIVE TABLE FIX  */
+    /*********************************/
     table thead {
         display: none;
     }
-    table, tbody, tr, td {
+    table, tbody, tr {
         display: block;
         width: 100%;
     }
@@ -315,26 +318,30 @@ footer .copyright {
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+    
     table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
+        display: block;
+        width: 100%;
+        text-align: left; /* CHANGED */
+        padding: 1rem; /* CHANGED */
         border: none;
         border-bottom: 1px solid #f0f0f0; 
-        vertical-align: top; 
+        box-sizing: border-box; /* Ensures padding is included in width */
     }
+
     table tr td:last-child {
         border-bottom: none;
     }
+
+    /* This creates the "label" (e.g., "Website") */
     table td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        padding-right: 10px;
+        display: block; /* CHANGED */
         font-weight: 700;
-        text-align: left;
         color: #000;
-        vertical-align: top;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 5px; /* Adds space between label and data */
     }
+    /*********************************/
 }
