@@ -38,8 +38,6 @@ h1, h2 {
     color: #000;
 }
 
-/* Removed old h2 styling, will style it inside content-block */
-
 /* ======== HEADER & NAVIGATION ======== */
 header {
     background: var(--light-blue-bg); 
@@ -92,7 +90,7 @@ main {
 }
 
 /*********************************/
-/* THIS IS THE NEW REFACTORED STYLE */
+/* REFACTORED CONTENT BLOCK STYLE */
 /*********************************/
 .content-block {
     background-color: var(--light-blue-bg);
@@ -225,21 +223,6 @@ table tbody tr:nth-child(even) {
     font-weight: 700;
     color: var(--text-dark);
 }
-
-/*********************************/
-/* NEW ANIMATION STYLES */
-/*********************************/
-.content-block.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.content-block.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 
 /* ======== FOOTER ======== */
 footer {
