@@ -218,6 +218,7 @@ table tbody tr:nth-child(even) {
 .final-message .content-block {
     font-size: 1.1rem;
     color: var(--text-dark);
+    text-align: center; /* This line is ADDED BACK */
 }
 /*********************************/
 
