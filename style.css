@@ -151,7 +151,7 @@ main {
     border: 1px solid var(--primary-blue);
     text-decoration: none;
     transition: all 0.2s ease;
-    display: inline-block; /* Added for better layout control */
+    display: inline-block; 
 }
 
 .waitlist-btn:hover {
@@ -169,6 +169,7 @@ main {
 
 .table-container {
     width: 100%;
+    /* This overflow-x: auto; is for DESKTOP if the window gets too small */
     overflow-x: auto; 
 }
 
@@ -291,57 +292,24 @@ footer .copyright {
         text-align: left;
     }
 
-    /*********************************/
-    /* UPDATED WAITLIST BUTTON FIX */
-    /*********************************/
     .waitlist-btn {
         width: auto; /* Let padding control the width */
         padding: 1rem 1.5rem; /* Adjust padding for mobile */
         font-size: 0.9rem; /* Slightly smaller font */
     }
+    
     /*********************************/
-
+    /* NEW RESPONSIVE TABLE FIX      */
+    /* This makes the table "slide"  */
     /*********************************/
-    /* UPDATED RESPONSIVE TABLE FIX  */
-    /*********************************/
-    table thead {
-        display: none;
-    }
-    table, tbody, tr {
-        display: block;
-        width: 100%;
-    }
-    table tr {
-        margin-bottom: 1.5rem;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    .table-container {
+        overflow-x: auto;
     }
     
-    table td {
-        display: block;
-        width: 100%;
-        text-align: left; /* CHANGED */
-        padding: 1rem; /* CHANGED */
-        border: none;
-        border-bottom: 1px solid #f0f0f0; 
-        box-sizing: border-box; /* Ensures padding is included in width */
-    }
-
-    table tr td:last-child {
-        border-bottom: none;
-    }
-
-    /* This creates the "label" (e.g., "Website") */
-    table td::before {
-        content: attr(data-label);
-        display: block; /* CHANGED */
-        font-weight: 700;
-        color: #000;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        margin-bottom: 5px; /* Adds space between label and data */
+    /* We add this to ensure the table doesn't shrink */
+    .table-container table {
+        min-width: 600px; 
     }
     /*********************************/
+
 }
