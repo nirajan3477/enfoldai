@@ -1,0 +1,357 @@
+/* ======== GLOBAL STYLES ======== */
+:root {
+    --primary-blue: #0052ff; 
+    --light-blue-bg: #f0f6ff;
+    --text-dark: #333;
+    --text-light: #555;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #fff;
+    /* Added overflow-x-hidden to prevent horizontal scroll from animations */
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+/* Remove the default underline on hover for links */
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2 {
+    color: #000;
+}
+
+/* Removed old h2 styling, will style it inside content-block */
+
+/* ======== HEADER & NAVIGATION ======== */
+header {
+    background: var(--light-blue-bg); 
+    border-bottom: 1px solid var(--border-color); 
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.nav-desktop a {
+    margin-left: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    padding-bottom: 5px; 
+    border-bottom: 4px solid transparent; 
+    transition: border-color 0.2s ease-in-out;
+}
+
+.nav-desktop a:hover {
+    border-bottom-color: var(--primary-blue); 
+}
+
+.nav-desktop a.active {
+    border-bottom-color: var(--primary-blue);
+}
+
+.hamburger, .nav-mobile {
+    display: none;
+}
+
+/* ======== MAIN CONTENT ======== */
+main {
+    /* Add padding to the top to space out the first block */
+    padding-top: 2.5rem;
+}
+
+/*********************************/
+/* THIS IS THE NEW REFACTORED STYLE */
+/*********************************/
+.content-block {
+    background-color: var(--light-blue-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem; /* Standardized spacing */
+}
+
+/* Hero block styles */
+.hero .content-block {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.hero h1 span {
+    color: var(--primary-blue);
+    display: inline-block;
+}
+
+.hero-underline {
+    height: 5px;
+    width: 100px;
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    margin: 1rem auto;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+}
+
+/* Text content block styles */
+.content .content-block p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+}
+
+.content .content-block p:last-of-type {
+    margin-bottom: 0;
+}
+
+.waitlist-button-container {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+}
+
+.waitlist-btn {
+    background-color: #fff; /* Changed to white */
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.waitlist-btn:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Table block styles */
+.table-section .content-block h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff; 
+}
+
+table th, table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+}
+
+table td {
+    overflow-wrap: break-word; 
+    vertical-align: middle; 
+}
+
+table th:last-child,
+table td:last-child {
+    border-right: none;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+/* Final message block styles */
+.final-message .content-block {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/*********************************/
+/* NEW ANIMATION STYLES */
+/*********************************/
+.content-block.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ======== FOOTER ======== */
+footer {
+    background: #fff; 
+    color: var(--text-light); 
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+footer .logo {
+    font-size: 1.5rem;
+    color: var(--primary-blue); 
+}
+
+footer .footer-links {
+    margin: 1rem 0;
+}
+
+footer .footer-links a {
+    margin: 0 1rem;
+    color: var(--text-dark); 
+    font-weight: 700;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--text-light); 
+}
+
+
+/* ############################################### */
+/* ##########  MOBILE RESPONSIVE FIX ############# */
+/* ############################################### */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* ======== Mobile Header ======== */
+    .nav-desktop { display: none; }
+    .hamburger { display: flex; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 10; }
+    .hamburger span { width: 30px; height: 3px; background: var(--text-dark); border-radius: 3px; transition: all 0.3s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+    .nav-mobile { display: flex; flex-direction: column; background: #fff; position: absolute; top: 70px; left: 0; width: 100%; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 10px rgba(0,0,0,0.1); }
+    .nav-mobile.active { max-height: 500px; }
+    .nav-mobile a { padding: 1.2rem; text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--text-dark); text-decoration: none; border-bottom: 1px solid var(--border-color); }
+    .nav-mobile a:hover { background-color: var(--light-blue-bg); }
+
+    /* ======== Mobile Layout & Font ======== */
+    .content-block {
+        padding: 1.5rem; /* Tighter padding on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .table-section .content-block h2 {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    .waitlist-btn {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    /* ======== THE RESPONSIVE TABLE FIX ======== */
+    table thead {
+        display: none;
+    }
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+    table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #f0f0f0; 
+        vertical-align: top; 
+    }
+    table tr td:last-child {
+        border-bottom: none;
+    }
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: 700;
+        text-align: left;
+        color: #000;
+        vertical-align: top;
+    }
+}
