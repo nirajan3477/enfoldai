@@ -169,7 +169,6 @@ main {
 
 .table-container {
     width: 100%;
-    /* This overflow-x: auto; is for DESKTOP if the window gets too small */
     overflow-x: auto; 
 }
 
@@ -212,13 +211,16 @@ table tbody tr:nth-child(even) {
     background-color: #fdfdfd;
 }
 
+/*********************************/
+/* THIS IS THE UPDATED RULE */
+/*********************************/
 /* Final message block styles */
 .final-message .content-block {
-    text-align: center;
     font-size: 1.1rem;
-    font-weight: 700;
     color: var(--text-dark);
 }
+/*********************************/
+
 
 /* ======== FOOTER ======== */
 footer {
@@ -298,10 +300,7 @@ footer .copyright {
         font-size: 0.9rem; /* Slightly smaller font */
     }
     
-    /*********************************/
-    /* NEW RESPONSIVE TABLE FIX      */
-    /* This makes the table "slide"  */
-    /*********************************/
+    /* This makes the table "slide" */
     .table-container {
         overflow-x: auto;
     }
@@ -310,6 +309,5 @@ footer .copyright {
     .table-container table {
         min-width: 600px; 
     }
-    /*********************************/
 
 }
